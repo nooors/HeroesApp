@@ -1,4 +1,8 @@
-<h1>{{title}}<small>alterEgo</small></h1>
+<h1>
+  {{hero.id ? 'Edit '+ hero.superhero : 'New Hero '}}<small
+    >{{hero.alter_ego ? ' ' + hero.alter_ego : ' alter_ego'}}</small
+  >
+</h1>
 
 <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
   <div fxFlex="50" fxLayout="column">
@@ -49,9 +53,20 @@
     </mat-form-field>
     <br />
 
-    <button mat-raised-button color="accent" (click)="saveHero()">
-      <mat-icon>save</mat-icon>Save
-    </button>
+    <div fxLayout>
+      <button mat-raised-button color="accent" (click)="saveHero()">
+        <mat-icon>save</mat-icon>Save
+      </button>
+      <span class="spacer"></span>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="deleteHero()"
+        *ngIf="hero.id"
+      >
+        <mat-icon>delete</mat-icon>Delete
+      </button>
+    </div>
   </div>
   <div fxFlex="50">
     <img [src]="hero | image" alt="hero image" />
