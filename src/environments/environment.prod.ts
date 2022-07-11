@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_BASE: "",
+  API_BASE: "https://heroes-db-server.herokuapp.com",
 };
