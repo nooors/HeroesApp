@@ -16,6 +16,7 @@ const routes: Routes = [
     canLoad: [AuthGuard],
     canActivate: [AuthGuard],
   },
+  { path: "", redirectTo: "auth", pathMatch: "full" },
   { path: "404", component: ErrorPageComponent },
   { path: "**", redirectTo: "404" },
 ];
