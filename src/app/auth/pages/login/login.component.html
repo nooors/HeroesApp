@@ -1,7 +1,18 @@
-<mat-grid-list cols="1">
-  <mat-grid-tile>
-    <button mat-raised-button color="primary" (click)="login()">
-      Login
-    </button>
-  </mat-grid-tile>
-</mat-grid-list>
+<mat-sidenav-container fullscreen>
+  <div class="container">
+    <mat-card>
+      <mat-card-title>Heroes App</mat-card-title>
+      <hr />
+      <mat-card-content>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="login()"
+          class="mat-elevation-z10"
+        >
+          Login
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</mat-sidenav-container>
