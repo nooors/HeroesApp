@@ -23,16 +23,20 @@ import { AuthService } from "../../services/auth.service";
   ],
 })
 export class LoginComponent implements OnInit {
+  pBar: boolean = false;
+
   constructor(private router: Router, private httpSrv: AuthService) {}
 
   ngOnInit(): void {}
   login() {
-    // Ïr al backend
-    // un usuario
+    // show progress bar
+    this.pBar = true;
+    // go to backend
+    // one user
     this.httpSrv.login().subscribe((response) => {
       console.log(response);
-      // disponible en toda la aplicación
-      // si todo sale bien ir a la pagina de list heroes
+      // avaible in all app
+      // if everything is allright go to heroes list page
       this.router.navigate(["/heroes"]);
     });
   }
